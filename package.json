@@ -1,0 +1,30 @@
+{
+  "name": "easing-gen",
+  "version": "1.0.0",
+  "description": "Generate importable files for various CSS preprocessors containing easing definitions. Data taken from <http://easings.net>",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "js-yaml": "^3.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aetherised/easing-gen.git"
+  },
+  "keywords": [
+    "easing",
+    "easings",
+    "css",
+    "transition"
+  ],
+  "author": "aetherised",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aetherised/easing-gen/issues"
+  },
+  "homepage": "https://github.com/aetherised/easing-gen#readme"
+}

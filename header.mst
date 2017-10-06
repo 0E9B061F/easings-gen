@@ -1,0 +1,14 @@
+/*
+#!
+#!  easings.{{ext}}
+#!  Easings for CSS transitions, defined as bezier curves.
+#!
+#!  Data taken from <http://easings.net> - visit the site to see
+#!  each easing. Credit to Andrey Sitnik <https://github.com/ai>.
+#!
+#!  Generated from <https://github.com/aetherised/easing-gen>
+#!  Happy developing!
+#!
+*/
+
+{{body}}
