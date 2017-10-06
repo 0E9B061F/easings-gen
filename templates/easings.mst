@@ -1,5 +1,4 @@
 /*
-#!
 #!  easings.{{ext}}
 #!  Easings for CSS transitions, defined as bezier curves.
 #!
@@ -8,7 +7,8 @@
 #!
 #!  Generated from <https://github.com/aetherised/easing-gen>
 #!  Happy developing!
-#!
 */
 
-{{body}}
+{{&body}}
+
+/* A penny for the Old Guy */

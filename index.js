@@ -1,31 +1,44 @@
 'use strict'
 
-const yaml = require('js-yaml')
 const fs = require('fs')
+const Mustache = require('mustache')
 
 
-const header = fs.readFileSync('header.txt', 'utf-8')
+const extensions = {stylus: 'styl', less: 'less', scss: 'scss'}
 
-const decamelize =( s )=> {
-  return s.replace(/([A-Z])/g, '-$1').toLowerCase()
+const handlers = {
+  stylus: ( obj )=> {
+    return `${obj.name.padEnd(pad)} = ${obj.css}`
+  },
+
+  less: ( obj )=> {
+    var name = `${obj.name}:`.padEnd(pad)
+    return `@${name} ${obj.css};`
+  },
+
+  scss: ( obj )=> {
+    var name = `${obj.name}:`.padEnd(pad)
+    return `$${name} ${obj.css};`
+  }
+}
+
+const generate =( data, to )=> {
+  var ext = extensions[to]
+  var body = data.map(handlers[to]).join("\n")
+  var output = Mustache.render(header, {body, ext})
+  fs.writeFileSync(`build/easings.${ext}`, output)
 }
 
 
-// Get document, or throw exception on error
-try {
-  var doc = yaml.safeLoad(fs.readFileSync('easings.yaml', 'utf-8'))
-} catch (e) {
-  console.log(e)
-}
+// Read and prepare input files
+var header = fs.readFileSync('templates/easings.mst', 'utf-8')
+var data = fs.readFileSync('data/easings.json', 'utf-8')
+data = JSON.parse(data)
 
-var lengths = Object.values(doc).map((x)=> { return decamelize(x.name).length })
-var pad = Math.max(...lengths)
+// Find max name length for prettier printing
+var pad = data.map((x)=> { return x.name.length })
+pad = Math.max(...pad)
 
-doc = doc.map((o)=> {
-  o.name = decamelize(o.name).padEnd(pad)
-  return `${o.name} = ${o.css}`
-})
-doc = doc.join("\n")
-doc = `${header}\n\n${doc}\n`
-
-fs.writeFileSync('build/easings.styl', doc)
+generate(data, 'stylus')
+generate(data, 'less')
+generate(data, 'scss')
