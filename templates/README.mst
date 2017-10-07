@@ -14,7 +14,10 @@ Example usage, using Stylus:
 Note that `ease-out-circ` is not a native CSS easing but one of the timing functions
 defined by the generated libraries. The full set of provided easings can be seen in
 action on [easings.net](http://easings.net). For more information on CSS transitions and
-timing functions see []().
+timing functions see the MDN documentation on [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) and [timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function).
+
+If you just want a copy of one of the output libraries, they're available [as a
+gist.](https://gist.github.com/aetherised/bf4cbe13d0f0455c8b7c201ded7797c6)
 
 The following {{count}} named easings are provided:
 
