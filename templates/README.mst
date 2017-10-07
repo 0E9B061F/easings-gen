@@ -1,6 +1,6 @@
-Generate libraries of named timing functions for various CSS preprocessors, for use with
+Generate libraries of named easings for various CSS preprocessors, for use with
 the CSS `transition` property. These are meant to augment CSS's limited selection of
-native easings.
+native timing functions.
 
 Example usage, using Stylus:
 
