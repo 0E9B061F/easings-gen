@@ -12,12 +12,12 @@ gen.handler('stylus', ( obj )=> {
 }, 'styl')
 
 gen.handler('less', ( obj )=> {
-  var name = `${obj.name}:`.padEnd(gen.pad)
+  var name = `${obj.name}:`.padEnd(gen.pad+1)
   return `@${name} ${obj.css};`
 })
 
 gen.handler('scss', ( obj )=> {
-  var name = `${obj.name}:`.padEnd(gen.pad)
+  var name = `${obj.name}:`.padEnd(gen.pad+1)
   return `$${name} ${obj.css};`
 })
 
