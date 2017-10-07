@@ -1,0 +1,25 @@
+Generate libraries of named timing functions for various CSS preprocessors, for use with
+the CSS `transition` property. These are meant to augment CSS's limited selection of
+native easings.
+
+Example usage, using Stylus:
+
+    @import "easings"
+
+    body
+      transition: color 1s ease-out-circ
+
+Note that `ease-out-circ` is not a native CSS easing but one of the timing functions
+defined by the generated libraries. The full set of provided easings can be seen in
+action on [easings.net](http://easings.net). For more information on CSS transitions and
+timing functions see []().
+
+The following {{count}} named easings are provided:
+
+| Name | Curve |
+|------|-------|
+{{#easings}}
+| **{{name}}** | `{{css}}` |
+{{/easings}}
+
+Source data taken from [easings.net](http://easings.net), by [Andrey Sitnik](https://github.com/ai).
