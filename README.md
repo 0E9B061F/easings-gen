@@ -1,4 +1,6 @@
-Generate libraries of named easings for various CSS preprocessors, for use with
+## easings-gen
+
+**Generates libraries of named easings for various CSS preprocessors,** for use with
 the CSS `transition` property. These are meant to augment CSS's limited selection of
 native timing functions.
 
