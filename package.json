@@ -3,14 +3,20 @@
   "version": "1.2.0",
   "description": "Generate importable files for various CSS preprocessors containing easing definitions. Data taken from <http://easings.net>",
   "main": "index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "fs-extra": "^4.0.2",
     "js-yaml": "^3.10.0",
     "mustache": "^2.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "node index.js",
+    "build:readme": "node scripts/readme.js",
+    "dist:prepare": "node scripts/mkdist.js",
+    "dist:remove": "node scripts/rmdist.js",
+    "prepare": "npm run build:css && npm run dist:prepare",
+    "postpublish": "npm run dist:remove"
   },
   "repository": {
     "type": "git",

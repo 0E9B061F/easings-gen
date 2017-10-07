@@ -22,4 +22,3 @@ gen.handler('scss', ( obj )=> {
 })
 
 gen.generate_each()
-gen.readme()
